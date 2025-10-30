@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você 💖</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    overflow-x: hidden;
+    background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+  }
+
+  header {
+    text-align: center;
+    padding: 80px 20px 50px;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-top: 0;
+    font-weight: normal;
+  }
+
+  .section {
+    text-align: center;
+    margin: 100px auto;
+    max-width: 600px;
+  }
+
+  .photo {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    background: #fff url('https://via.placeholder.com/250') center/cover no-repeat;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    border: 10px solid #fff;
+    transform: rotate(-3deg);
+  }
+
+  .phrase {
+    font-size: 1.8em;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+
+  footer {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  button {
+    background: rgba(255,255,255,0.8);
+    border: none;
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Arial';
+  }
+
+  button:hover {
+    background: #fff;
+  }
+
+  audio {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="overlay"></div>
+
+<header>
+  <h1>Maria 💖</h1>
+  <h2>Eu te amo</h2>
+</header>
+
+<div class="section">
+  <div class="photo"></div>
+  <p class="phrase">Desde o primeiro dia, meu coração escolheu você.</p>
+</div>
+<div class="section">
+  <div class="photo" style="background:url('https://via.placeholder.com/250/FFC0CB') center/cover no-repeat; transform: rotate(3deg);"></div>
+  <p class="phrase">Cada sorriso seu vale mais que mil palavras.</p>
+</div>
+<div class="section">
+  <div class="photo" style="background:url('https://via.placeholder.com/250/E6E6FA') center/cover no-repeat; transform: rotate(-2deg);"></div>
+  <p class="phrase">O som da sua voz é a minha melodia favorita.</p>
+</div>
+<div class="section">
+  <div class="photo" style="background:url('https://via.placeholder.com/250/FFDAB9') center/cover no-repeat; transform: rotate(1deg);"></div>
+  <p class="phrase">O tempo passa, mas meu amor só cresce.</p>
+</div>
+<div class="section">
+  <div class="photo" style="background:url('https://via.placeholder.com/250/F0E68C') center/cover no-repeat; transform: rotate(-4deg);"></div>
+  <p class="phrase">Pra sempre será você, o meu lar.</p>
+</div>
+
+<footer>
+  <button id="replayMusic">🔁 Repetir música</button>
+  <button id="restartPage">🔼 Ver novamente</button>
+  <audio id="music" src="https://sndup.net/t/example.mp3" autoplay></audio>
+</footer>
+
+<script>
+  const phrases = document.querySelectorAll('.phrase');
+  let index = 0;
+
+  function showNextPhrase() {
+    phrases.forEach((p, i) => p.style.opacity = (i === index ? '1' : '0'));
+    index = (index + 1) % phrases.length;
+  }
+
+  showNextPhrase();
+  setInterval(showNextPhrase, 5000); // troca a cada 5 segundos
+
+  // rolagem automática
+  function autoScroll() {
+    window.scrollBy(0, 1);
+    if ((window.innerHeight + window.scrollY) < document.body.offsetHeight) {
+      requestAnimationFrame(autoScroll);
+    }
+  }
+
+  // inicia rolagem suave
+  setTimeout(autoScroll, 2000);
+
+  // botões
+  const audio = document.getElementById('music');
+  document.getElementById('replayMusic').onclick = () => {
+    audio.currentTime = 0;
+    audio.play();
+  };
+  document.getElementById('restartPage').onclick = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    setTimeout(autoScroll, 1000);
+  };
+</script>
+</body>
+</html>
