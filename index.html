@@ -1,159 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Você 💖</title>
+<title>Sara — eu te amo</title>
+
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Dancing Script', cursive;
-    color: white;
-    overflow-x: hidden;
-    background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-  }
+/* 🌸 Configurações gerais */
+body {
+  margin: 0;
+  font-family: 'Segoe Script', cursive;
+  background: url('https://raw.githubusercontent.com/Magdiel32/Presente-Sara/c39fa8ccb8584df2c19b6d1e8e585e69ebaa71c6/IMG-20251030-WA0367.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  color: white;
+  overflow-x: hidden;
+}
 
-  .overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: -1;
-  }
+/* Efeito de marca-d’água */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  box-shadow: inset 0 0 200px rgba(255,255,255,0.5);
+  z-index: -1;
+}
 
-  header {
-    text-align: center;
-    padding: 80px 20px 50px;
-  }
+/* Título */
+h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 60px;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
+}
 
-  h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-  }
+/* Frases automáticas */
+#frase {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 40px 10px;
+  animation: fade 3s infinite;
+}
+@keyframes fade {
+  0%,100%{opacity:0;}
+  50%{opacity:1;}
+}
 
-  h2 {
-    font-size: 2em;
-    margin-top: 0;
-    font-weight: normal;
-  }
+/* Polaroids */
+.polaroid {
+  width: 300px;
+  margin: 50px auto;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+.polaroid img {
+  width: 100%;
+  border-radius: 5px;
+}
+.caption {
+  color: #333;
+  font-size: 1em;
+  margin-top: 10px;
+  text-align: center;
+}
 
-  .section {
-    text-align: center;
-    margin: 100px auto;
-    max-width: 600px;
-  }
+/* Botões finais */
+.buttons {
+  text-align: center;
+  margin: 50px 0 100px;
+}
+button {
+  background: rgba(255,255,255,0.8);
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+button:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
 
-  .photo {
-    width: 250px;
-    height: 250px;
-    margin: 20px auto;
-    background: #fff url('https://via.placeholder.com/250') center/cover no-repeat;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    border: 10px solid #fff;
-    transform: rotate(-3deg);
-  }
-
-  .phrase {
-    font-size: 1.8em;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-  }
-
-  footer {
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  button {
-    background: rgba(255,255,255,0.8);
-    border: none;
-    padding: 15px 25px;
-    margin: 10px;
-    border-radius: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    font-family: 'Arial';
-  }
-
-  button:hover {
-    background: #fff;
-  }
-
-  audio {
-    display: none;
-  }
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 <body>
-<div class="overlay"></div>
 
-<header>
-  <h1>Sara 💖</h1>
-  <h2>Eu te amo</h2>
-</header>
+<h1>Sara — eu te amo</h1>
 
-<div class="section">
-  <div class="photo"></div>
-  <p class="phrase">Desde o primeiro dia, meu coração escolheu você.</p>
-</div>
-<div class="section">
-  <div class="photo" style="background:url('https://via.placeholder.com/250/FFC0CB') center/cover no-repeat; transform: rotate(3deg);"></div>
-  <p class="phrase">Cada sorriso seu vale mais que mil palavras.</p>
-</div>
-<div class="section">
-  <div class="photo" style="background:url('https://via.placeholder.com/250/E6E6FA') center/cover no-repeat; transform: rotate(-2deg);"></div>
-  <p class="phrase">O som da sua voz é a minha melodia favorita.</p>
-</div>
-<div class="section">
-  <div class="photo" style="background:url('https://via.placeholder.com/250/FFDAB9') center/cover no-repeat; transform: rotate(1deg);"></div>
-  <p class="phrase">O tempo passa, mas meu amor só cresce.</p>
-</div>
-<div class="section">
-  <div class="photo" style="background:url('https://via.placeholder.com/250/F0E68C') center/cover no-repeat; transform: rotate(-4deg);"></div>
-  <p class="phrase">Pra sempre será você, o meu lar.</p>
-</div>
+<!-- 🎵 Áudio -->
+<audio id="musica" controls>
+  <!-- pra ativar autoplay depois, adicione autoplay muted -->
+  <source src="SEU_LINK_DO_AUDIO_AQUI.mp3" type="audio/mp3">
+</audio>
 
-<footer>
-  <button id="replayMusic">🔁 Repetir música</button>
-  <button id="restartPage">🔼 Ver novamente</button>
-  <audio id="music" src="https://sndup.net/t/example.mp3" autoplay></audio>
-</footer>
+<div id="frase"></div>
+
+<!-- 🌷 Fotos estilo Polaroid -->
+<div class="polaroid"><img src="https://raw.githubusercontent.com/Magdiel32/Presente-Sara/c39fa8ccb8584df2c19b6d1e8e585e69ebaa71c6/IMG-20251030-WA0364.jpg"><div class="caption">Desde o primeiro olhar, tudo mudou 💞</div></div>
+<div class="polaroid"><img src="https://raw.githubusercontent.com/Magdiel32/Presente-Sara/c39fa8ccb8584df2c19b6d1e8e585e69ebaa71c6/IMG-20251030-WA0365.jpg"><div class="caption">Com você, tudo fica leve 💫</div></div>
+<div class="polaroid"><img src="https://raw.githubusercontent.com/Magdiel32/Presente-Sara/c39fa8ccb8584df2c19b6d1e8e585e69ebaa71c6/IMG-20251030-WA0366.jpg"><div class="caption">O amor é simples, e tem o seu sorriso 💖</div></div>
+<div class="polaroid"><img src="https://raw.githubusercontent.com/Magdiel32/Presente-Sara/c39fa8ccb8584df2c19b6d1e8e585e69ebaa71c6/IMG-20251030-WA0368.jpg"><div class="caption">Cada lembrança com você é única 🌙</div></div>
+<div class="polaroid"><img src="https://raw.githubusercontent.com/Magdiel32/Presente-Sara/c39fa8ccb8584df2c19b6d1e8e585e69ebaa71c6/IMG-20251030-WA0369.jpg"><div class="caption">Te amo em cada detalhe da vida 🌹</div></div>
+
+<div class="buttons">
+  <button onclick="repetir()">🔁 Repetir</button>
+  <button onclick="verNovamente()">🔼 Ver novamente</button>
+</div>
 
 <script>
-  const phrases = document.querySelectorAll('.phrase');
-  let index = 0;
+/* Frases automáticas */
+const frases = [
+  "Nosso amor é infinito 💕",
+  "Você é minha melhor parte 🌸",
+  "Cada dia contigo é um presente 🎁",
+  "Te amo mais do que palavras dizem 💞",
+  "Pra sempre nós dois 💍"
+];
+let i = 0;
+function trocaFrase(){
+  document.getElementById('frase').innerText = frases[i];
+  i = (i + 1) % frases.length;
+}
+setInterval(trocaFrase, 4000);
+trocaFrase();
 
-  function showNextPhrase() {
-    phrases.forEach((p, i) => p.style.opacity = (i === index ? '1' : '0'));
-    index = (index + 1) % phrases.length;
-  }
-
-  showNextPhrase();
-  setInterval(showNextPhrase, 5000); // troca a cada 5 segundos
-
-  // rolagem automática
-  function autoScroll() {
-    window.scrollBy(0, 1);
-    if ((window.innerHeight + window.scrollY) < document.body.offsetHeight) {
-      requestAnimationFrame(autoScroll);
-    }
-  }
-
-  // inicia rolagem suave
-  setTimeout(autoScroll, 2000);
-
-  // botões
-  const audio = document.getElementById('music');
-  document.getElementById('replayMusic').onclick = () => {
-    audio.currentTime = 0;
-    audio.play();
-  };
-  document.getElementById('restartPage').onclick = () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-    setTimeout(autoScroll, 1000);
-  };
+/* Botões */
+function repetir(){
+  const musica = document.getElementById('musica');
+  musica.currentTime = 0;
+  musica.play();
+}
+function verNovamente(){
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
 </body>
-
 </html>
