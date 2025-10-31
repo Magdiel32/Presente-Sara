@@ -21,8 +21,8 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255,255,255,0.25);
-  box-shadow: inset 0 0 200px rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.25); /* clareia a imagem */
+  border-radius: 50%; /* bordas suaves estilo marca d’água */
   z-index: -1;
 }
 
@@ -99,7 +99,7 @@ html {
 
 <!-- 🎵 Áudio -->
 <audio id="musica" controls>
-  <!-- pra ativar autoplay depois, adicione autoplay muted -->
+  <!-- Para ativar autoplay no futuro, adicione: autoplay muted -->
   <source src="SEU_LINK_DO_AUDIO_AQUI.mp3" type="audio/mp3">
 </audio>
 
